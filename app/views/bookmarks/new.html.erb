@@ -1,8 +1,9 @@
-<h1>Create a new bookmark</h1>
-
-<%= simple_form_for [ @bookmark, @list, @movie ] do |f| %>
-  <%= f.association :list_id, :name %>
-  <%= f.association :movie_id, :title %>
-  <%= f.input :comment %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <%= link_to '<- Back', list_path(@list) %>
+  <h1>Create a new bookmark</h1>
+  <%= simple_form_for( [ @list, @bookmark ] ) do |f| %>
+    <%= f.association :movie %>
+    <%= f.input :comment %>
+    <%= f.submit %>
+  <% end %>
+</div>

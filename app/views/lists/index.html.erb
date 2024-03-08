@@ -1,5 +1,13 @@
-<h1>My lists</h1>
+<div class="container">
+  <h1>My lists</h1>
+  <div>
+    <button class="btn-primary"><%= link_to '+ New List', new_list_path(@list) %></button>
+  </div>
 
-<% @lists.each do |list| %>
-<%= link_to list.name, list_path(list.id) %>
-<% end %>
+  <ul>
+      <% @lists.each do |list| %>
+      <li><%= link_to list.name, list_path(list.id) %></li>
+        <% end %>
+    </li>
+  </ul>
+</div>
